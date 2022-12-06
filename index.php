@@ -23,21 +23,21 @@
                 <li><a href="./index.php">Strona główna</li>
                 <?php
                     for($k=1; $k<=12; $k++){
-                       print("<li><a href='https://ie.ppuz.edu.pl/~s14197/~PanTadeusz/'>Księga $k</a></li>"); 
+                       print("<li><a href='./index.php?k=$k'>Księga $k</a></li>"); 
                     }
                 ?>
         </ul>
         </div>
         <div class="col-8">
             <?php
-                if(isset($_GET['k'])){
+                if (isset($_GET['k'])){
                     $k = $_GET['k'];
                     include_once("k$k.html");
                 }
-                else
-                print(<img src="./pan_tadeusz.jpg" alt="Pan Tadeusz" class="img-fluid">);
+                else{
+                print('<img src="./pan_tadeusz.jpg" alt="Pan Tadeusz" class="img-fluid">');
+            }
             ?>
-            <img src="./pan_tadeusz.jpg" alt="Pan Tadeusz" class="img-fluid">
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
